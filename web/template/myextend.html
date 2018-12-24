@@ -1,5 +1,11 @@
 {% extends 'base.html'%}
 {% include 'myinclude.html' %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'mycss.css')}}">
+{% endblock %}
 {% block body %}
    <h1>hello world {{ name }}</h1>
+   <div id = "mydiv" style="width: 400px; height: 500px;">
+
+   </div>
 {% endblock%}
