@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>hello Flask</title>
+</head>
+<body>
+    <ul>
+        {% for item in date%}
+        <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+    {% set body =['dsadsad','dssafsafsafsa','hello world'] %}
+
+    <ul>
+        <li>{{body[0]|first|wordcount|my_s}}</li>
+        <li>{{body[1]}}</li>
+        <li>{{body[0]}}</li>
+    </ul>
+    <ul>
+    {%  for i in f %}
+    <li>{{i}}</li>
+    {% endfor%}
+    {% if hello() is enmptry %}
+        {{ body[2] }} 11111
+    {% else %}
+        no
+    {% endif %}
+    </ul>
+    {% from 'dsa/macro.html' import qux with context %}
+    {{qux(ampount = 5)}}
+</body>
+</html>
