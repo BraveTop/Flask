@@ -1,7 +1,7 @@
-from flask import Flask, render_template,Markup
+from flask import Flask,redirect, render_template,Markup, flash, url_for
 
 app =Flask(__name__, static_folder='static', template_folder='template')
-
+app.secret_key = "sddas"
 @app.template_global()
 def hello():
     print("hello world")
@@ -33,5 +33,9 @@ def enmptry(s):
 def mytemplate(name):
     return render_template('myextend.html', name = name)
 
+@app.route('/flash')
+def myflash():
+    flash("hello")
+    return redirect(url_for('mytemplate', name = 'das'))
 if __name__ == "__main__":
     app.run('127.0.0.1', port= 9000, debug= True)
