@@ -29,9 +29,9 @@ def enmptry(s):
         return False
 
 
-@app.route('/hello/')
-def mytemplate():
-    return render_template('myextend.html', )
+@app.route('/hello/<name>/')
+def mytemplate(name):
+    return render_template('myextend.html', name = name)
 
 if __name__ == "__main__":
     app.run('127.0.0.1', port= 9000, debug= True)
