@@ -33,9 +33,12 @@ def enmptry(s):
 def mytemplate(name):
     return render_template('myextend.html', name = name)
 
+
 @app.route('/flash')
 def myflash():
     flash("hello")
     return redirect(url_for('mytemplate', name = 'das'))
+
+
 if __name__ == "__main__":
-    app.run('127.0.0.1', port= 9000, debug= True)
+    app.run('127.0.0.1', port= 9000, debug = True)
