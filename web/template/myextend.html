@@ -1,5 +1,12 @@
 {% extends 'base.html'%}
-{% include 'myinclude.html' %}
-{% block body %}
-   <h1>hello world {{ name }}</h1>
+{% include 'myinclude.html' %} {% block body %}
+<!-- {{ super() }} 附加内容 -->
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'mycss.css')}}">
+{% endblock %}
+<h1>hello world {{ name }}</h1>
+<a href="{{ url_for('mytemplate', name='hello world')}}"> other</a>
+<div id ="mydiv" style="width:500px; height:400px;">
+
+</div>
 {% endblock%}
