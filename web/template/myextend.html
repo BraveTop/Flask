@@ -5,7 +5,13 @@
 {% endblock %}
 
 {% block body %}
-    {{get_flashed_messages()}}
+    {% with message = [get_flashed_messages()] %}
+    <ul style="list-style-type: None;">
+        {% for item in message %}
+        <li>{{item.0}}</li>
+        {% endfor %}
+    </ul>
+    {% endwith %}
    <h1>hello world {{ name }}</h1>
    <div id = "mydiv" style="width: 400px; height: 500px;">
 
